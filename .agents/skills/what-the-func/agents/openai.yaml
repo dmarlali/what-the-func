@@ -1,0 +1,4 @@
+interface:
+  display_name: "What the Func"
+  short_description: "Audit code for clarity and maintainability"
+  default_prompt: "Use $what-the-func to audit this repository and report prioritized findings before making changes."
