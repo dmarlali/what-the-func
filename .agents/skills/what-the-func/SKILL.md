@@ -12,7 +12,7 @@ Audit the requested repository against the shared coding rules available in the 
 1. Read the shared rules and any instructions that apply within the target repository.
 2. Identify first-party source and test code. Exclude dependencies, generated files, vendored code, caches, and build output.
 3. Inspect enough of the repository to support the requested scope. Prefer complete coverage for small repositories; use a representative sample for large repositories and say what was and was not reviewed.
-4. Evaluate naming, duplication, function clarity and size, unnecessary functionality, and comment quality. Treat function length as a prompt for judgment, not a mechanical six-line limit.
+4. Evaluate naming, duplication, function clarity and size, unnecessary functionality, and comment quality. Judge function size by focus and level of abstraction, not by line count. Report function names that are a bare verb with no object.
 5. Report findings without modifying files.
 
 ## Report

@@ -3,8 +3,9 @@
 - Code is documentation; put in the effort to make it clear.
 - When these guidelines conflict, choose the approach that makes the code easiest to understand and change correctly. Do not add abstractions or split functions solely to satisfy a guideline.
 - Use descriptive names for variables, functions, classes, and modules. Use project terminology consistently, and name functions after what they do.
-- Prefer very small functions, typically only a few lines long. Treat any function longer than about six lines as a signal to consider extraction, not an absolute limit.
-- Extract a coherent operation that can be named clearly. Keep closely related steps together when splitting them would make the flow harder to understand.
+- Name a function with a verb and the thing it acts on, such as `parseInvoice` or `sendWelcomeEmail`. Do not use a bare verb such as `process`, `handle`, `run`, or `update`, unless the receiver or module already names the thing, such as `invoice.send()`. The reader must know what the function does from the call site.
+- Prefer small functions that do one task at one level of abstraction. When a function grows, look for a part that you can name clearly, and extract it.
+- Keep closely related steps together when splitting them would make the flow harder to understand.
 - Higher-level functions should read like a story through clearly named operations, allowing the reader to choose which functions to inspect for more detail.
 - Use DRY (Don't Repeat Yourself). Extract duplicated logic when it represents the same responsibility and should change together. Prefer a little duplication over an abstraction that couples unrelated behavior or requires special cases to accommodate its callers.
 - Use YAGNI (You Aren't Gonna Need It). Do not add functionality until it is necessary.
@@ -13,7 +14,7 @@
 # Before You Write Code
 
 - Ask if the code must exist. Skip the work when the answer is no.
-- Understand the problem before you write. Read the task and the code thta it touches, and trace the flow from end to end.
+- Understand the problem before you write. Read the task and the code that it touches, and trace the flow from end to end.
 - Search for code that solves the problem already. Use this order, and stop at the first step that works:
     1. A helper, a utility, or a pattern in the repository.
     2. The standard library of the language.
