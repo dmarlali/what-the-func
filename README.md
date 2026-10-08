@@ -21,7 +21,7 @@ python .install/install.py
 ```
 
 This installs the skill and shared coding rules into your Claude Code configuration:
-- Copies the skill to `~/.claude/skills/what-the-func`
+- Copies the skills to `~/.claude/skills/what-the-func` and `~/.claude/skills/small-steps`
 - Installs coding rules into `~/.claude/what-the-func/INSTRUCTIONS.md`
 
 ## Usage
@@ -36,6 +36,14 @@ Or reference it explicitly:
 
 ```
 Use $what-the-func to audit this repository and report findings before making changes.
+```
+
+## Small Steps
+
+The repository also contains the `small-steps` skill. It plans a task as small steps. You review and commit each step before the next step starts.
+
+```
+/small-steps <task>
 ```
 
 ## Shared Coding Rules
@@ -64,9 +72,12 @@ These rules are installed to your Claude configuration and applied across all yo
 .
 ├── INSTRUCTIONS.md                    # Shared coding rules
 ├── .agents/
-│   └── skills/what-the-func/
+│   ├── skills/what-the-func/
+│   │   ├── SKILL.md                   # Skill definition
+│   │   └── agents/openai.yaml         # Claude Code configuration
+│   └── skills/small-steps/
 │       ├── SKILL.md                   # Skill definition
-│       └── agents/openai.yaml         # Claude Code configuration
+│       └── agents/openai.yaml         # Codex configuration
 ├── .install/
 │   ├── install.py                     # Installation script
 │   ├── AGENTS.md                      # Agent instructions template

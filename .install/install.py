@@ -4,7 +4,7 @@ import shutil
 
 MARKER = "<!-- what-the-func:start -->"
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
-SKILL_SOURCE = REPOSITORY_ROOT / ".agents" / "skills" / "what-the-func"
+SKILLS_SOURCE = REPOSITORY_ROOT / ".agents" / "skills"
 
 
 def install_managed_instructions(source, destination, instructions_path):
@@ -33,8 +33,8 @@ def replace_managed_section(existing_text, managed_text):
     return f"{existing_text[:start]}{managed_text.strip()}{existing_text[end:]}"
 
 
-def install_skill(destination):
-    shutil.copytree(SKILL_SOURCE, destination, dirs_exist_ok=True)
+def install_skills(destination):
+    shutil.copytree(SKILLS_SOURCE, destination, dirs_exist_ok=True)
 
 
 def main():
@@ -72,8 +72,8 @@ def main():
         claude_root / "CLAUDE.md",
         claude_instructions,
     )
-    install_skill(codex_skills / "what-the-func")
-    install_skill(claude_skills / "what-the-func")
+    install_skills(codex_skills)
+    install_skills(claude_skills)
 
 
 if __name__ == "__main__":

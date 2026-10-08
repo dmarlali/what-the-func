@@ -1,0 +1,6 @@
+interface:
+  display_name: "Small Steps"
+  short_description: "Plan and make a change in small, reviewed steps"
+  default_prompt: "Use $small-steps to plan this task as small steps that I review and commit one at a time."
+policy:
+  allow_implicit_invocation: false
