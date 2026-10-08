@@ -34,6 +34,8 @@
 - Use approved words with one meaning each. Use the same word for the same thing every time.
 - Write instructions as commands. Start with the verb.
 - Do not use synonyms for project terminology. Use the project name for each thing.
+- Start each chat reply with the result: what now works, or the answer.
+- If work is still open, end the chat reply with one "Next:" line that gives one specific action.
 
 # Code Comments
 
